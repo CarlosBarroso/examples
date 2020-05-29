@@ -3,7 +3,12 @@ _BUILD_NUMBER=env.BUILD_NUMBER
 
 pipeline {
   agent any
-  stages {
+  
+  environment {
+    DEMO= "beta"
+  }
+
+  stages {     
     stage('step 1') {
       steps {
         echo "this is the build $BUILD_NUMBER"
@@ -14,9 +19,22 @@ pipeline {
         '''
       }
     }
-
+    stage('deploy') {
+      input {
+        message 'Deploy?'
+        ok 'Do it!'
+        parameters {
+          string(name: 'TARGET_ENVIRONMENT', defaultValue: 'PROD')
+        }
+      }
+      steps {
+        echo "deploy release ${TARGET_ENVIRONMENT}"
+      }
+    }
+ 
   }
-  environment {
-    DEMO= "beta"
-  }
+  post{
+    always {
+      echo "proceso finalizado"
+    } 
 }
