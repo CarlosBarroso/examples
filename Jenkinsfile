@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('step 1') {
       steps {
-        println 'this is the build '
+        println 'this branch is the build '
         println BUILD_NUMBER
       }
     }
