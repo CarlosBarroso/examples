@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "inside the script"
+echo "inside the script demo $DEMO"
