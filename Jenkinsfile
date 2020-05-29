@@ -7,7 +7,11 @@ pipeline {
     stage('step 1') {
       steps {
         echo "this is the build $BUILD_NUMBER"
-        
+        sh '''
+          echo "using a multi-lien shell step"
+          chmod +x test.sh
+          ./test.sh
+        '''
       }
     }
 
