@@ -17,6 +17,6 @@ pipeline {
 
   }
   environment {
-    DEMO: "beta"
+    DEMO= "beta"
   }
 }
