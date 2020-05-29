@@ -8,8 +8,11 @@ pipeline {
       steps {
         println 'this branch is the build '
         println BUILD_NUMBER
+        println DEMO
       }
     }
-
+  }
+  environment {
+    DEMO = '1'
   }
 }
