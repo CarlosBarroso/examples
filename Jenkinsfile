@@ -16,4 +16,7 @@ pipeline {
     }
 
   }
+  environment {
+    DEMO: "beta"
+  }
 }
