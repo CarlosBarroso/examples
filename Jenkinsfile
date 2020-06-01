@@ -26,8 +26,18 @@ pipeline {
         '''
       }
     }
+    stage('step 2') {
+      steps {
+        writeFile file: "resultados.txt", test: "passed $BUILD_NUMBER" 
+      }
+    }
 
   }
+  post {
+    success {
+      archiveArtifacts 'resultados.txt'
+    }
+  } 
 
   environment {
     DEMO = '1'
