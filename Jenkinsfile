@@ -36,6 +36,8 @@ pipeline {
   post {
     success {
       archiveArtifacts 'resultados.txt'
+      notify 'Success'
+
     }
   } 
 
