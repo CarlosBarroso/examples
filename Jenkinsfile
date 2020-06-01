@@ -28,7 +28,7 @@ pipeline {
     }
     stage('step 2') {
       steps {
-        writeFile file: "resultados.txt", test: "passed $BUILD_NUMBER" 
+        writeFile file: "resultados.txt", text: "passed $BUILD_NUMBER" 
       }
     }
 
