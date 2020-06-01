@@ -12,10 +12,12 @@ def notify(status){
 
 pipeline {
   agent any
-  stages {
-    notify('Started')
+  stages {    
     stage('step 1') {
       steps {
+        echo "Send start email"
+        notify('Started')
+
         echo "this is the build $BUILD_NUMBER"
         sh '''
           echo "using a multi-lien shell step"
