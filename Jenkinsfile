@@ -11,8 +11,22 @@ def notify(status){
 }
 
 pipeline {
-  agent any
-  stages {    
+  agent {
+    docker {
+      image 'mcr.microsoft.com/docnet/core/sdk:3.1.101
+    }
+  }
+  stages {
+    stage('verify') {
+      steps {
+        sh ''' 
+          dotnet --list-sdks
+          dotnet --list-runtimes
+        '''
+        sh 'printenv'
+        sh 'ls -l "$WORKSPACE"'
+      }
+    }    
     stage('step 1') {
       steps {
         echo "Send start email"
