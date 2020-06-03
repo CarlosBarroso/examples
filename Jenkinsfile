@@ -43,11 +43,6 @@ pipeline {
     stage('step 2') {
       steps {
         writeFile file: "resultados.txt", text: "passed $BUILD_NUMBER" 
-        script {
-          if (Math.random() > 0.9) {
-            throw new Exception()
-          }
-        }
       }
     }
 
