@@ -13,7 +13,7 @@ def notify(status){
 pipeline {
   agent {
     docker {
-      image 'mcr.microsoft.com/dotnet/core/sdk:3.1.300-alpine3.11' 
+      image 'mcr.microsoft.com/dotnet/core/sdk:3.1' 
     }
   }
   stages {
