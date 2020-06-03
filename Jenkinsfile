@@ -19,11 +19,6 @@ pipeline {
   stages {
     stage('verify') {
       steps {
-        sh '''
-           FROM alpine:3.10
-           RUN apk add --update docker openrc
-           RUN rc-update add docker boot
-        '''
         sh ''' 
           dotnet --list-sdks
           dotnet --list-runtimes
