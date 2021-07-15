@@ -10,13 +10,13 @@ pipeline {
     stages {
         stage('Audit') {
             steps  {
-               jenkins-pipeline()
+               jenkinsPipeline()
             }
         }
     }
 }
 
-void jenkins-pipeline() {   
+void jenkinsPipeline() {   
       sh '''
         git version       
         dotnet --list-sdks
