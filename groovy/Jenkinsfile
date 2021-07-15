@@ -10,11 +10,7 @@ pipeline {
     stages {
         stage('Audit') {
             steps  {
-                sh '''
-                        git version
-                        dotnet --list-sdks
-                        dotnet --list-runtimes
-                      '''
+               jenkins-pipeline()
             }
         }
     }
