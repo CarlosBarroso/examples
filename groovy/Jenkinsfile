@@ -1,0 +1,13 @@
+library identifier: 'groovy@main', 
+        retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/CarlosBarroso/groovy.git'])
+
+pipeline {
+    agent any
+    stages {
+        stage('Audit') {
+            steps  {
+              jenkins-pipeline()
+            }
+        }
+    }
+}
