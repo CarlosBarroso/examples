@@ -1,5 +1,5 @@
-//library identifier: 'groovy@main', 
-//        retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/CarlosBarroso/groovy.git'])
+library identifier: 'groovy@main', 
+        retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/CarlosBarroso/groovy.git'])
 
 pipeline {
     agent {
@@ -16,10 +16,10 @@ pipeline {
     }
 }
 
-void jenkinsPipeline() {   
+/*void jenkinsPipeline() {   
       sh '''
         git version       
         dotnet --list-sdks
         dotnet --list-runtimes
       '''    
-}
+}*/
